@@ -1,0 +1,52 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Optimized Bubble sort",
+    "description": "REST API for Testing and Prototyping",
+    "version": "0.0.1"
+  },
+  "paths": {
+    "/api/task1.php": {
+      "post": {
+        "description": "Returns a given <int>array sorted in desc order. In order to be able to use the API you have to provide a 'secret' header field with the correct secret.",
+        "parameters": [
+          {
+            "name": "values",
+            "description": "An array of integer elements which will be sorted",
+            "in": "query",
+            "required": true
+          },
+          {
+            "name": "secret",
+            "description": "Secret to be able to use the API",
+            "in": "header",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request. Returns <int>array in desc order.",
+            "content": {
+              "application/json": {
+                "example": {
+                  "values": "[1,2,4,235,2345346,234123,3123,]"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Method Not Allowed. Only POST is allowed."
+          },
+          "403": {
+            "description": "Forbidden. No or wrong secret has been provided."
+          },
+          "422": {
+            "description": "Unprocessable Entity. Only integer elements in the 'values' field allowed. Please note that the data must be in JSON format."
+          }
+        }
+      }
+    }
+  }
+}
+
+
