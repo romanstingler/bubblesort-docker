@@ -2,6 +2,8 @@
 
 ### Installation and getting started
 **Prerequisites: docker-compose**
+For simplicity well known containers has been used. 
+When creating own container focus on size and security is required.
 
 Clone this repository and run `docker-compose up`.
 
