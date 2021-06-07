@@ -1,7 +1,8 @@
 # bubblesort-docker
 
 ### Installation and getting started
-**Prerequisites: docker-compose**
+**Prerequisites: docker-compose**  
+
 For simplicity well known containers has been used. 
 When creating own container focus on size and security is required.
 
